@@ -1,0 +1,4 @@
+(executable
+ (public_name bulls-and-cows)
+ (name main)
+ (libraries funclib))
