@@ -1,2 +1,3 @@
 (library
- (name funclib))
+ (name funclib)
+ (libraries batteries))

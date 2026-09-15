@@ -1,6 +1,7 @@
 (lang dune 3.24)
 
 (name bulls-and-cows)
+(version 166e085-dirty)
 
 (generate_opam_files true)
 
@@ -19,7 +20,9 @@
  (name bulls-and-cows)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends
+  ocaml
+  batteries)
  (tags
   ("add topics" "to describe" your project)))
 
