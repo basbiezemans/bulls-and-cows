@@ -31,8 +31,8 @@ let test_feedback _ =
     ("1234", "2134", { bulls = 2; cows = 2 })] in
   List.map
     (fun (str1, str2, expected) ->
-      let code1 = string_to_code str1 in
-      let code2 = string_to_code str2 in
+      let code1 = Result.get_ok (string_to_code str1) in
+      let code2 = Result.get_ok (string_to_code str2) in
       assert_equal expected (feedback code1 code2)
     )
     test_cases |> ignore (* run the asserts but ignore the result *)
@@ -42,7 +42,10 @@ let test_show_feedback _ =
   assert_equal "●○○" (show { bulls = 1; cows = 2 })
 
 let test_string_to_code _ =
-  assert_equal [1; 2; 3; 4] (string_to_code "1234")
+  assert_equal true @@ Result.is_error (string_to_code "");
+  assert_equal true @@ Result.is_error (string_to_code "12");
+  assert_equal true @@ Result.is_error (string_to_code "12e4");
+  assert_equal true @@ Result.is_ok (string_to_code "1234")
 
 let test_code_to_string _ =
   assert_equal "1234" (code_to_string [1; 2; 3; 4])
