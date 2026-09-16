@@ -1,7 +1,11 @@
-val is_valid : int list -> bool
+type digit = D1 | D2 | D3 | D4 | D5 | D6
 
-val of_string : string -> (int list, string) result
+type code = digit * digit * digit * digit
 
-val to_string : int list -> string
+val to_list : code -> digit list
 
-val secret : int list
+val of_string : string -> (code, string) result
+
+val to_string : code -> string
+
+val secret : unit -> code

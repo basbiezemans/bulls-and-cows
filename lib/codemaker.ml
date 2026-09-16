@@ -7,7 +7,7 @@ type feedback = {
 
 let equal pairs = List.filter (fun p -> fst p = snd p) pairs
 
-let unequal pairs = List.filter (fun p -> fst p != snd p) pairs
+let unequal pairs = List.filter (fun p -> fst p <> snd p) pairs
 
 let num_bulls pairs = List.length (equal pairs)
 
@@ -24,12 +24,12 @@ let num_cows pairs =
 (**
  * [feedback code1 code2] returns the number of matching digits that are in
  * the right positions (bulls), and in different positions (cows).
- * @param code1 a list of 4 digits
- * @param code2 a list of 4 digits
+ * @param code1 a four-digit code
+ * @param code2 a four-digit code
  * @return a record with the number of bulls and cows
  *)
 let feedback code1 code2 =
-  let pairs = List.combine code1 code2 in
+  let pairs = List.combine (Code.to_list code1) (Code.to_list code2) in
   { bulls = num_bulls pairs; cows = num_cows pairs }
 
 let show { bulls; cows } =

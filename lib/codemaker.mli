@@ -3,6 +3,6 @@ type feedback = {
   cows : int;
 }
 
-val feedback : int list -> int list -> feedback
+val feedback : Code.code -> Code.code -> feedback
 
 val show : feedback -> string
