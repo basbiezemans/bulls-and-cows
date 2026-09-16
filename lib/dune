@@ -1,3 +1,5 @@
 (library
  (name funclib)
+ (wrapped false)
+ (modules funclib code)
  (libraries batteries))
