@@ -1,5 +1,5 @@
 (library
  (name funclib)
  (wrapped false)
- (modules funclib code)
+ (modules codemaker code)
  (libraries batteries))

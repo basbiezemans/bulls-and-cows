@@ -3,5 +3,5 @@
  (libraries funclib ounit2))
 
 (test
- (name test_funclib)
+ (name test_codemaker)
  (libraries funclib ounit2))
