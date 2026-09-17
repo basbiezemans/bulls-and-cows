@@ -24,7 +24,7 @@ let test_show_feedback _ =
   assert_equal "●○○" (show { bulls = 1; cows = 2 })
 
 let suite =
-  "bulls-and-cows" >::: [
+  "test suite for codemaker" >::: [
     "feedback" >:: test_feedback;
     "show" >:: test_show_feedback;
   ]

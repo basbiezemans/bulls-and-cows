@@ -15,10 +15,10 @@ let test_code_to_list _ =
   assert_equal [D1; D2; D3; D4] (to_list (D1, D2, D3, D4))
 
 let suite =
-  "bulls-and-cows" >::: [
-    "code_of_string" >:: test_code_of_string;
-    "code_to_string" >:: test_code_to_string;
-    "code to list" >:: test_code_to_list;
+  "test suite for code" >::: [
+    "of_string" >:: test_code_of_string;
+    "to_string" >:: test_code_to_string;
+    "to_list" >:: test_code_to_list;
   ]
 
 let () = run_test_tt_main suite
