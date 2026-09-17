@@ -29,9 +29,9 @@ let of_string s =
   else
     match String.to_list s |> List.map digit_of_char with
     | [Some a; Some b; Some c; Some d] ->
-        Ok (a, b, c, d)
+      Ok (a, b, c, d)
     | _ ->
-        Error "each digit should be between 1 and 6, e.g. 1236"
+      Error "each digit should be between 1 and 6, e.g. 1236"
 
 let random_digit () =
   match Random.int_in_range ~min:1 ~max:6 with
